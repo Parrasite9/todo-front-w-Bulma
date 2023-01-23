@@ -13,7 +13,7 @@ const App = () => {
 
   // READ FUNCTION 
   const getTodo = () => {
-    axios.get('http://localhost:8000/api/todo').then((response) => 
+    axios.get('https://fathomless-refuge-25826.herokuapp.com/api/todo').then((response) => 
     setTodos(response.data), (err) =>
     console.log(err))
     console.log(todos);
@@ -22,7 +22,7 @@ const App = () => {
   // CREATE FUNCTION 
   const handleCreate = (addTodo) => {
     console.log(addTodo);
-    axios.post('http://localhost:8000/api/todo', addTodo).then((response) => {
+    axios.post('https://fathomless-refuge-25826.herokuapp.com/api/todo', addTodo).then((response) => {
       console.log(response);
       // READ FUNCTION  
       getTodo()
@@ -32,7 +32,7 @@ const App = () => {
   // UPDATE FUNCTION
   const handleUpdate = (editTodo) => {
     console.log(editTodo);
-    axios.put('http://localhost:8000/api/todo/' + editTodo.id, editTodo).then((response) => {
+    axios.put('https://fathomless-refuge-25826.herokuapp.com/api/todo/' + editTodo.id, editTodo).then((response) => {
       getTodo()
     })
   } 
@@ -40,7 +40,7 @@ const App = () => {
 
   // DELETE FUNCTION 
   const handleDelete = (e) => {
-    axios.delete('http://localhost:8000/api/todo/' + e.target.value).then((response) => {
+    axios.delete('https://fathomless-refuge-25826.herokuapp.com/api/todo/' + e.target.value).then((response) => {
       getTodo()
     })
   }
