@@ -16,7 +16,7 @@ const Add = (props) => {
         <>
             <form onSubmit={handleSubmit}>
                 <input type='text' name="title" placeholder="I need todo..." className="task-input"  required onChange={handleChange}/>
-                <input type='submit' />
+                <input className="submitbtn button is-primary mt-3" type='submit' />
             </form>
         </>
     )

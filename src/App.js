@@ -4,6 +4,9 @@ import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
 
+import { fontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 const App = () => {
 
   let [todos, setTodos] = useState([])
@@ -50,16 +53,17 @@ const App = () => {
     <>
       <div className='container'>
         <div className='todo-container'>
-          <h1>Hello World</h1>
+          <h1 class="header text-3xl font-bold underline">My Todo List</h1>
           <Add handleCreate={handleCreate} />
           <div className='todos'>
             {todos.map((todo) => {
               return (
                 <>
                   <div className='todo' key={todo.id}>
-                    <h4>{todo.title}</h4>
-                    <Edit handleUpdate={handleUpdate} todo={todo} />
-                    <button onClick={handleDelete} value={todo.id} >X</button>
+                      <h4 className='todo-title'>{todo.title}</h4>
+                      <Edit handleUpdate={handleUpdate} todo={todo} />
+                      {/* <button className='deletebtn' onClick={handleDelete} value={todo.id} >X</button> */}
+                      <button className='delete is-small has-background-danger' onClick={handleDelete} value={todo.id}></button>
                   </div>
                 </>
               )

@@ -16,10 +16,18 @@ const Edit = (props) => {
     return (
         <>
             <details>
-                <summary>Edit Todo</summary>
+                {/* <summary>Edit Todo</summary> */}
+                <summary>
+                    <span class="icon-text has-text-warning-dark">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                        <span>Edit</span>
+                    </span>
+                </summary>
                 <form onSubmit ={handleSubmit} >
-                    <input type='text' name='title' value={todo.title} onChange={handleChange} />
-                    <input type='submit' />
+                    <input className="updateInput" type='text' name='title' value={todo.title} onChange={handleChange} />
+                    <input className="submitbtn button is-primary is-small is-warning" type='submit' />
                 </form>
             </details>
         </>
